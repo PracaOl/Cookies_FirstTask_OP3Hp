@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="ciastkaonload()">
+    <h1 id="test">Testowanie Cookies!</h1>
+    <div id="akceptuj">
+        <p>AKCEPTUJ</p>
+        <button onclick="ciastka()" id="btn">Zaakceptuj</button>
+    </div>
+    <style>
+        #test {
+            color: navy;
+            text-align: center;
+            font-weight: bold;
+        }
+        #btn {
+            height: 200px;
+            width: 200px;
+        }
+        #akceptuj {
+            text-align: center;
+        }
+    </style>
+    <script>
+            function ciastka() {
+                document.cookie =  "cookieAccept: true";
+            }
+            var ciastko = document.cookie;
+            function ciastkaonload() {
+                if (ciastko.startsWith("cookieAccept: true")) {
+                    document.getElementById("akceptuj").hidden = true;
+                }
+            }
+    </script>
+</body>
+</html>
