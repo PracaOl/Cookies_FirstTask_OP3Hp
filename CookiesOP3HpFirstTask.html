@@ -32,7 +32,7 @@
             }
             var ciastko = document.cookie;
             function ciastkaonload() {
-                if (ciastko.startsWith("cookieAccept: true")) {
+                if (ciastko.includes("cookieAccept: true")) {
                     document.getElementById("akceptuj").hidden = true;
                 }
             }
