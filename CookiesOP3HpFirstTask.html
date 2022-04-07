@@ -10,7 +10,7 @@
     <h1 id="test">Testowanie Cookies!</h1>
     <div id="akceptuj">
         <p>Ta strona uzywa ciasteczek, nacisnij na guzik ze sie zgadzas na zbieranie danych.</p>
-        <button onclick="ciastka()" id="btn">Zaakceptuj</button>
+        <button onclick="ciastka(), vanish()" id="btn">Zaakceptuj</button>
     </div>
     <style>
         #test {
@@ -29,6 +29,9 @@
     <script>
             function ciastka() {
                 document.cookie =  "cookieAccept: true";
+            }
+            function vanish() {
+                document.getElementById("akceptuj").hidden = true;
             }
             var ciastko = document.cookie;
             function ciastkaonload() {
